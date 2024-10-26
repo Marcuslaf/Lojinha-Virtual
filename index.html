@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+    <body>
+        <header>
+            <h1>Lojinha Virtual</h1>
+        </header>
+        <div class="container">
+            <div id="userInfo"></div>
+            <div id="loginForm">
+                <input type="text" id="username" placeholder="Usuário">
+                <input type="password" id="password" placeholder="Senha">
+                <button onclick="login()">Login</button>
+                <button onclick="toggleForm()">Não tem uma conta? Cadastre-se</button>
+            </div>
+            <div id="registerForm" style="display: none;">
+                <input type="text" id="newUsername" placeholder="Usuário">
+                <input type="password" id="newPassword" placeholder="Senha">
+                <button onclick="register()">Cadastrar</button>
+                <button onclick="toggleForm()">Já tem uma conta? Faça login</button>
+            </div>
+            <h2>Produtos</h2>
+            <div id="products" class="product-list"></div>
+            <div id="cart" class="cart">
+                <h2>Carrinho</h2>
+                <div id="cartItems"></div>
+                <div id="cartTotal"></div>
+            </div>
+        </div>
+        <div id="deliveryForm">
+            <h2>Endereço de Entrega</h2>
+            <input type="text" id="cep" placeholder="CEP" oninput="fetchAddress()">
+            <input type="text" id="street" placeholder="Rua" readonly>
+            <input type="text" id="number" placeholder="Número">
+            <input type="text" id="neighborhood" placeholder="Bairro" readonly>
+            <input type="text" id="city" placeholder="Cidade" readonly>
+            <input type="text" id="state" placeholder="Estado" readonly>
+        </div>
+        <button onclick="checkout()">Finalizar Compra</button>
+    </body>
+</html>
